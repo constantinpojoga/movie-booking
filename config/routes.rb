@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :auditoria
+  resources :tickets
+  resources :shows
+  resources :movies
   get 'home/index'
   root :to => 'home#index'
 
