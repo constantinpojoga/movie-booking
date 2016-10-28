@@ -15,21 +15,21 @@
     <div class="form-group">
       <div class="field">
         <%= f.label :movie_id, {:class => "control-label"} %>
-        <%= f.number_field :movie_id, {:class => "form-control"} %>
+        <%= f.select :movie_id, Movie.all.collect {|x| [x.name, x.id]}, {}, {:class => "form-control"} %>
       </div>
 
       <div class="field">
-        <%= f.label :auditorium_id, {:class => "control-label"}  %>
-        <%= f.number_field :auditorium_id, {:class => "form-control"}  %>
+        <%= f.label :auditorium_id, {:class => "control-label"} %>
+        <%= f.select :auditorium_id, Auditorium.all.collect {|x| [x.name, x.id]}, {}, {:class => "form-control"} %>
       </div>
 
       <div class="field">
-        <%= f.label :start_datetime, {:class => "control-label"}  %>
-        <%= f.datetime_select :start_datetime, {:class => "form-control"}  %>
+        <%= f.label :start_datetime, {:class => "control-label"} %>
+        <%= f.datetime_select :start_datetime, {:class => "form-control"} %>
       </div>
 
       <div class="field">
-        <%= f.label :end_datetime, {:class => "control-label"}  %>
+        <%= f.label :end_datetime, {:class => "control-label"} %>
         <%= f.datetime_select :end_datetime, {:class => "form-control"} %>
       </div>
 
@@ -38,7 +38,7 @@
       </div>
     </div>
   <% end %>
-    
+     
 </div>
 
 

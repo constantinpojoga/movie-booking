@@ -3,45 +3,52 @@
 
     <div class="col-xs-12">
       <p class="color-red" id="notice"><%= notice %></p>
-       <h1>Shows </h1> 
+       <h1>Shows <%= link_to 'New Show', new_show_path, {:class => "btn btn-info"} %></h1> 
+       <hr />
+  
     </div>
   </div>
   
-    <% @shows.each do |show| %>
-      <div class="row show-result">
-        <div class="col-xs-4 col-sm-2">
-          <%= link_to show do %>
-            <img class="shows-img" src="<%= show.movie.img %>"> 
-          <% end %>
-        </div>
+  <% @shows.each do |show| %>
+    <div class="row show-result">
 
-        <div class="col-xs-8 col-sm-10">
-          <%= link_to show do %>
-            <h4>
-              <strong>Movie:</strong>
-              <td><%= show.movie.name %></td>
-            </h4>
-          <% end %>
-
-          <p>
-            <strong>Auditorium:</strong>
-            <td><span style="color:<%= show.auditorium.name.downcase %>;"><%= show.auditorium.name %></span></td>
-          </p>
-
-          <p>
-            <strong>Show time:</strong>
-            <%= show.start_datetime.strftime("%b %d, %Y at %I:%M - ") %>
-            <%= show.end_datetime.strftime(" %I:%M%p") %>
-          </p>
-
-          <%= link_to 'Edit', edit_show_path(show), {:class => "btn btn-xs btn-default"} %>
-          <%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure to delete this show?'}, :class => "btn btn-xs btn-default" %>
-        </div>
-        
+      <div class="col-xs-4 col-sm-2">
+        <%= link_to show do %>
+          <img class="shows-img" src="<%= show.movie.img %>"> 
+        <% end %>
       </div>
-    <% end %> 
-  <hr />
-  <%= link_to 'New Show', new_show_path, {:class => "btn btn-info"} %>
+
+      <div class="col-xs-8 col-sm-10">
+        <%= link_to show do %>
+          <h4>
+            <strong>Movie:</strong>
+            <td><%= show.movie.name %></td>
+          </h4>
+        <% end %>
+
+        <p>
+          <strong>
+            Auditorium:
+            <td>
+              <span style="color:<%= show.auditorium.name.downcase %>;">
+                <%= show.auditorium.name %>
+              </span>
+            </td>
+          </strong>
+        </p>
+
+        <p>
+          <strong>Show time:</strong>
+          <%= show.start_datetime.strftime("%b %d, %Y, from %I:%M%P to ") %>
+          <%= show.end_datetime.strftime(" %I:%M%P") %>.
+        </p>
+
+        <%= link_to 'Edit', edit_show_path(show), {:class => "btn btn-xs btn-default"} %>
+        <%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure to delete this show?'}, :class => "btn btn-xs btn-default" %>
+      </div>
+        
+    </div>
+  <% end %>  
  
 </div>
 

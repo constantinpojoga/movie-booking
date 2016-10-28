@@ -4,13 +4,7 @@
 
   <div class="row">
     <div class="col-sm-4">
-
-      <%= link_to 'Edit', edit_show_path(@show), {:class => "btn btn-info"}  %> 
-      <%= link_to 'Back', shows_path, {:class => "btn btn-info"} %>
-      <br /><br />
       <img class="img-responsive show-big-img" src="<%= @show.movie.img %>">
-      
-
     </div>
 
     <div class="col-sm-8">
@@ -26,7 +20,7 @@
 
       <p>
         <strong>Auditorium:</strong>
-        <%= @show.auditorium.name %>
+        <span style="color:<%= @show.auditorium.name.downcase %>;"><%= @show.auditorium.name %></span>
       </p>
 
       <p>
@@ -37,5 +31,9 @@
       
     </div>
   </div>
+  <hr />
+  <%= link_to 'Edit', edit_show_path(@show), {:class => "btn btn-info"}  %> 
+  <%= link_to 'Back', shows_path, {:class => "btn btn-info"} %>
+      
 </div>
 

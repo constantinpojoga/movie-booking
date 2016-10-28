@@ -1,24 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col-sm-4">
+      <img class="img-responsive show-big-img" src="<%= @movie.img %>">
+    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @movie.name %>
-</p>
+    <h4>
+      <strong>Name:</strong>
+      <%= @movie.name %>
+    </h4>
 
-<p>
-  <strong>About:</strong>
-  <%= @movie.about %>
-</p>
+    <p>
+      <strong>About:</strong>
+      <%= @movie.about %>
+    </p>
 
-<p>
-  <strong>Length:</strong>
-  <%= @movie.length %>
-</p>
+    <p>
+      <strong>Length:</strong>
+      <%= @movie.length %>min.
+    </p>
+  </div>
+  <hr />
+  <%= link_to 'Edit', edit_movie_path(@movie), {:class => "btn btn-info"}  %>
+  <%= link_to 'Back', movies_path, {:class => "btn btn-info"}  %>
 
-<p>
-  <strong>Img:</strong>
-  <%= @movie.img %>
-</p>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+</div>
