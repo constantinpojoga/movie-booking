@@ -1,5 +1,7 @@
-<h1>New Auditorium</h1>
+<div class="container">
+  <h1>New Auditorium</h1>
 
-<%= render 'form', auditorium: @auditorium %>
-
-<%= link_to 'Back', auditoria_path %>
+    <%= render 'form', auditorium: @auditorium %>
+    <hr />
+    <%= link_to 'Back', auditoria_path, {:class => "btn btn-info"} %>
+</div>

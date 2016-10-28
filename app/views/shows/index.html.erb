@@ -1,33 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
 
-<h1>Shows</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Movie</th>
-      <th>Auditorium</th>
-      <th>Start datetime</th>
-      <th>End datetime</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+    <div class="col-xs-12">
+      <p class="color-red" id="notice"><%= notice %></p>
+       <h1>Shows </h1> 
+    </div>
+  </div>
+  
     <% @shows.each do |show| %>
-      <tr>
-        <td><%= show.movie_id %></td>
-        <td><%= show.auditorium_id %></td>
-        <td><%= show.start_datetime %></td>
-        <td><%= show.end_datetime %></td>
-        <td><%= link_to 'Show', show %></td>
-        <td><%= link_to 'Edit', edit_show_path(show) %></td>
-        <td><%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="row show-result">
+        <div class="col-xs-4 col-sm-2">
+          <%= link_to show do %>
+            <img class="shows-img" src="<%= show.movie.img %>"> 
+          <% end %>
+        </div>
 
-<br>
+        <div class="col-xs-8 col-sm-10">
+          <%= link_to show do %>
+            <h4>
+              <strong>Movie:</strong>
+              <td><%= show.movie.name %></td>
+            </h4>
+          <% end %>
 
-<%= link_to 'New Show', new_show_path %>
+          <p>
+            <strong>Auditorium:</strong>
+            <td><span style="color:<%= show.auditorium.name.downcase %>;"><%= show.auditorium.name %></span></td>
+          </p>
+
+          <p>
+            <strong>Show time:</strong>
+            <%= show.start_datetime.strftime("%b %d, %Y at %I:%M - ") %>
+            <%= show.end_datetime.strftime(" %I:%M%p") %>
+          </p>
+
+          <%= link_to 'Edit', edit_show_path(show), {:class => "btn btn-xs btn-default"} %>
+          <%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure to delete this show?'}, :class => "btn btn-xs btn-default" %>
+        </div>
+        
+      </div>
+    <% end %> 
+  <hr />
+  <%= link_to 'New Show', new_show_path, {:class => "btn btn-info"} %>
+ 
+</div>
+

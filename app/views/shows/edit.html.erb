@@ -1,6 +1,16 @@
-<h1>Editing Show</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
 
-<%= render 'form', show: @show %>
+      <h1>Editing Show</h1>
 
-<%= link_to 'Show', @show %> |
-<%= link_to 'Back', shows_path %>
+      <%= render 'form', show: @show %>
+      <hr />
+      <%= link_to 'Show', @show, {:class => "btn btn-info"}  %> 
+      <%= link_to 'Back', shows_path, {:class => "btn btn-info"}  %>
+
+        
+    </div>
+  </div>
+</div>
+

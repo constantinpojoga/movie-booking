@@ -1,35 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Tickets</h1>
+  <h1>Tickets</h1>
+  <div class="table-responsive">
+    <table  class="table table-striped">
+      <thead>
+        <tr>
+          <th>Show</th>
+          <th>Name</th>
+          <th>Email address</th>
+          <th class="text-right">Seat row</th>
+          <th class="text-right">Seat number</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Show</th>
-      <th>Name</th>
-      <th>Email address</th>
-      <th>Seat row</th>
-      <th>Seat number</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @tickets.each do |ticket| %>
+          <tr>
+            <td><%= ticket.show_id %></td>
+            <td><%= ticket.name %></td>
+            <td><%= ticket.email_address %></td>
+            <td class="text-right"><%= ticket.seat_row %></td>
+            <td class="text-right"><%= ticket.seat_number %></td>
+            <td>
+              <%= link_to 'Show', ticket, {:class => "btn btn-xs btn-default"} %>
+              <%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-default" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-  <tbody>
-    <% @tickets.each do |ticket| %>
-      <tr>
-        <td><%= ticket.show_id %></td>
-        <td><%= ticket.name %></td>
-        <td><%= ticket.email_address %></td>
-        <td><%= ticket.seat_row %></td>
-        <td><%= ticket.seat_number %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Ticket', new_ticket_path %>
+  <hr />
+  <%= link_to 'New Ticket', new_ticket_path, {:class => "btn btn-info"} %> 
+</div>

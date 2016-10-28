@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @auditorium.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <span style="color:<%= @auditorium.name %>;"><%= @auditorium.name %></span> 
+  </p>
 
-<p>
-  <strong>Seat rows:</strong>
-  <%= @auditorium.seat_rows %>
-</p>
+  <p>
+    <strong>Seat rows:</strong>
+    <%= @auditorium.seat_rows %>
+  </p>
 
-<p>
-  <strong>Seats per row:</strong>
-  <%= @auditorium.seats_per_row %>
-</p>
+  <p>
+    <strong>Seats per row:</strong>
+    <%= @auditorium.seats_per_row %>
+  </p>
+  <hr />
+  <%= link_to 'Edit', edit_auditorium_path(@auditorium), {:class => "btn btn-info"}  %> 
+  <%= link_to 'Back', auditoria_path, {:class => "btn btn-info"}  %>
 
-<%= link_to 'Edit', edit_auditorium_path(@auditorium) %> |
-<%= link_to 'Back', auditoria_path %>
+</div>
+
+

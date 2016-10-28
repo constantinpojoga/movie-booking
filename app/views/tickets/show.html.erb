@@ -1,29 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
 
-<p>
-  <strong>Show:</strong>
-  <%= @ticket.show_id %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @ticket.name %>
-</p>
+    <div class="col-sm-3 ">
+      <img class="img-responsive" src="<%= @ticket.show.movie.img %>">
+      
+    </div>
 
-<p>
-  <strong>Email address:</strong>
-  <%= @ticket.email_address %>
-</p>
+    <div class="col-sm-9">
+      <p>
+        <strong>Movie: </strong> 
+        <%= @ticket.show.movie.name %>
+      </p>
 
-<p>
-  <strong>Seat row:</strong>
-  <%= @ticket.seat_row %>
-</p>
+      <p>
+        <strong>Auditorium: </strong> 
+        <span style="color:<%= @ticket.show.auditorium.name %>"><%= @ticket.show.auditorium.name %></span>
+      </p>
 
-<p>
-  <strong>Seat number:</strong>
-  <%= @ticket.seat_number %>
-</p>
+      <p>
+        <strong>Name: </strong> 
+        <%= @ticket.name %>
+      </p>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+      <p>
+        <strong>Email address:</strong> 
+        <%= @ticket.email_address %>
+      </p>
+
+      <p>
+        <strong>Date/Time:</strong>
+        <%= @ticket.show.start_datetime.strftime("%b %d, %Y at %I:%M%P") %>
+      </p>
+
+      <p>
+        <strong>Seat row:</strong> 
+        <%= @ticket.seat_row %>. 
+        <strong>Seat number:</strong> 
+        <%= @ticket.seat_number %>.
+      </p>   
+
+    </div>
+  </div>
+  <hr />
+
+  <%= link_to 'Back', tickets_path, {:class => "btn btn-info"} %>
+</div>
