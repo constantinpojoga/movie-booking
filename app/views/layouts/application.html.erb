@@ -3,12 +3,40 @@
   <head>
     <title>Codechallenge</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-inverse" role="navigation" data-spy="affix" 
+      data-offset-top="775">
+        <div id="home" class="container ">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Movie Theater</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/movies">Movies</a></li>
+              <li><a href="/shows">Shows</a></li>
+              <li><a href="/auditoria">Auditoriums</a></li>
+              <li><a id="contactLink" href="/tickets">Tickets</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
     <%= yield %>
+
   </body>
 </html>

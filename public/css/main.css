@@ -1,0 +1,12 @@
+body {
+  background: #ddd;
+}
+
+.nav .navbar {
+  border-radius: 0;
+}
+
+.navbar-inverse {
+  width: 100%;
+  z-index: 100;
+}

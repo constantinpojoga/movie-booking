@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Auditoria</h1>
+<h1>Auditoriums</h1>
 
 <table>
   <thead>
@@ -18,7 +18,6 @@
         <td><%= auditorium.name %></td>
         <td><%= auditorium.seat_rows %></td>
         <td><%= auditorium.seats_per_row %></td>
-        <td><%= link_to 'Show', auditorium %></td>
         <td><%= link_to 'Edit', edit_auditorium_path(auditorium) %></td>
         <td><%= link_to 'Destroy', auditorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
