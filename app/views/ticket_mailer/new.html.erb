@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <h1>You have successfully bought a ticket!</h1>
+  <h2>Ticket data:</h2>
+   <h3>
+        <strong>Movie: </strong> 
+        <%= @ticket.show.movie.name %>
+      </h3>
+
+      <h4>
+        <strong>Auditorium: </strong> 
+        <span style="color:<%= @ticket.show.auditorium.name %>"><%= @ticket.show.auditorium.name %></span>
+      </h4>
+
+      <h4>
+        <strong>Name: </strong> 
+        <%= @ticket.name %>
+      </h4>
+
+      <h4>
+        <strong>Email address:</strong> 
+        <%= @ticket.email_address %>
+      </h4>
+
+      <h4>
+        <strong>Date/Time:</strong>
+        <%= @ticket.show.start_datetime.strftime("%b %d, %Y at %I:%M%P") %>
+      </h4>
+
+      <h4>
+        <strong>Seat row:</strong> 
+        <%= @ticket.seat_row %>. 
+        <strong>Seat number:</strong> 
+        <%= @ticket.seat_number %>.
+      </h4>   
+      <br />
+      <h4>Thank you, enjoy your movie!</h4>
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+======================================
+You have successfully bought a ticket!
+======================================
+Ticket data:
+______________________________________
+
+Movie:         | <%= @ticket.show.movie.name %>
+
+Auditorium:    | <%= @ticket.show.auditorium.name %>
+
+Name: <%= @ticket.name %>
+
+Email address: | <%= @ticket.email_address %>
+
+Date/Time:     |  <%= @ticket.show.start_datetime.strftime("%b %d, %Y at %I:%M%P") %>
+
+Row:  <%= @ticket.seat_row %> | Seat number:<%= @ticket.seat_number %>.
+
+Thank you, enjoy your movie!
+ 

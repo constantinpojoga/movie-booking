@@ -36,6 +36,12 @@ class TicketsController < ApplicationController
     
     respond_to do |format|
       if @ticket.save
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.ticket_email(@user).deliver_later
+
+
+
+        
         format.html { redirect_to @ticket, notice: 'Thank you for buying the ticket. We will send a ticket confirmation to your email address.' }
         format.json { render :show, status: :created, location: @ticket }
       else
