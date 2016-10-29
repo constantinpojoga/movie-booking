@@ -1,28 +1,31 @@
-<<<<<<< HEAD
-# README
+## Movie Theater APP
+# To run local:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  1. Connect to the database (with pgAdmin)
 
-Things you may want to cover:
+  2. Run: $ rails s
 
-* Ruby version
 
-* System dependencies
+# ToDo:
 
-* Configuration
+* Generate a Rails App
 
-* Database creation
+* Create GitHub repository and add it to the project
 
-* Database initialization
+* Create new Heroku project
 
-* How to run the test suite
+* Setup Postgres (comes by default with Sqlit3, which is not working on Heroku)
 
-* Services (job queues, cache servers, search engines, etc.)
+* Create the Postgres database
 
-* Deployment instructions
+* Generate Controllers/Views/Models (Home, Movie, Show, Auditorium, Ticket)
 
-* ...
-=======
-# movie-booking
->>>>>>> 7b14d5b34361878a2f90c97894d6d8e413324e55
+* Setup relations in the database
+
+* Add data to the database
+
+* Buy ticket page
+
+* Styling and responsive with Bootstrap
+
+
