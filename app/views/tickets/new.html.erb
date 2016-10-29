@@ -95,8 +95,8 @@
     var seat = parseInt($(this).text().split(".")[1]);
     var row = parseInt($(this).text().split(".")[0]);
 
-    seatRow   = seat;
-    seatOnRow = row;
+    seatRow   = row;
+    seatOnRow = seat;
 
     $('#seat-chosen').val(seat);
     $('#row-chosen').val(row);
@@ -112,45 +112,43 @@
         emailAddress     = $('#email-address').val();
 
 // Hard code !!1
-    buyTicket("Costel", "costel@mail.ru", 4, 5);
+    // buyTicket(nameOnCard, emailAddress, seatRow, seatOnRow);
 
-    // if (!isValidNameOnCard(nameOnCard)) {
-    //   errMessage('Enter your name');
-    // } else if (!isValidEmailAddress(emailAddress)) {
-    //   errMessage("Enter valid email address");
-    // } else if (!isValidCardNumber(creditCardNumber)) {
-    //   errMessage('Enter 16 digits of the credit card number')
-    // } else if (!isValidDateOnCard(expirationDate)){
-    //   errMessage("Enter a valid expiration date");
-    // } else if (!areValidRowAndSeatNumber(seatRow, seatOnRow)) {
-    //   errMessage('Choose a green seat');
-    // }  else {
-    //   buyTicket(nameOnCard, emailAddress, seatRow, seatOnRow);
-    // }
+    if (!isValidNameOnCard(nameOnCard)) {
+      errMessage('Enter your name');
+    } else if (!isValidEmailAddress(emailAddress)) {
+      errMessage("Enter valid email address");
+    } else if (!isValidCardNumber(creditCardNumber)) {
+      errMessage('Enter 16 digits of the credit card number')
+    } else if (!isValidDateOnCard(expirationDate)){
+      errMessage("Enter a valid expiration date");
+    } else if (!areValidRowAndSeatNumber(seatRow, seatOnRow)) {
+      errMessage('Choose a green seat');
+    }  else {
+      buyTicket(nameOnCard, emailAddress, seatRow, seatOnRow);
+    }
   });
 
   function buyTicket(name, email, row, seat) {
-    var ticket = JSON.stringify({
-      "show_id": showId,
-      "name": name,
-      "email_address": email,
-      "seat_number": seat,
-      "seat_row": seat 
-    });
 
-    
     $.ajax({
       type: "POST",
       url: "/tickets",
-      data: ticket,
-      cache: false,
+      data: {
+        "ticket":{
+              show_id: showId,
+              name: name,
+              email_address: email,
+              seat_number: seat,
+              seat_row: row 
+            }},
       success: function(data){
         errMessage('Payment went well!');
         console.log('success')
       },
       error: function(err){
         errMessage('Payment went wrong!');
-        console.log(err);
+        console.log(err.responseText);
       }
     });
   }
