@@ -15,7 +15,10 @@ class TicketsController < ApplicationController
   # GET /tickets/new
   def new
     @ticket = Ticket.new
+    @currentlySelectedCategory = params[:show_id] || 1
+    @show = Show.find(@currentlySelectedCategory)
   end
+
 
   # GET /tickets/1/edit
   def edit
@@ -36,6 +39,7 @@ class TicketsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /tickets/1
   # PATCH/PUT /tickets/1.json

@@ -13,3 +13,87 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background: #ddd;
+}
+
+.nav .navbar {
+  border-radius: 0;
+}
+
+.navbar-inverse {
+  width: 100%;
+  z-index: 100;
+}
+
+.color-red {
+  color: red;
+}
+
+.shows-img {
+  max-width: 100px;
+  max-height: 120px;
+}
+
+.show-result {
+  margin-bottom: 10px;
+  border: 1px solid lightgrey;
+}
+
+.show-big-img {
+  max-height: 500px;
+  border:1px solid lightgrey;
+}
+
+.color-lightblue {
+  color: lightblue;
+}
+/*********************/
+/*Buy ticket*/
+
+
+body {
+  background: #ddd;
+  box-sizing: border-box;
+}
+
+.seats {
+  padding: 2px;
+  background: #aaa;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+
+.seats-legend {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+.single-seat {
+  padding: 0px;
+  margin: 2px;
+  font-size: 12px;
+  display: inline-block;
+  color: #FFF;
+  border-radius: 5px;
+  line-height: 25px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.single-seat-active {
+  background: green;
+}
+
+.single-seat-reserved {
+  background: grey;
+}
+
+.single-seat-selected {
+  background: red;
+}
+

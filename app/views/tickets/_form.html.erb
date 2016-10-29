@@ -12,9 +12,16 @@
   <% end %>
 
 <div class="form-grup">
+
+  <!-- @currentlySelectedCategory -->
   <div class="field">
     <%= f.label :show_id, {:class => "control-label"} %>
-    <%= f.number_field :show_id, {:class => "form-control"} %>
+    <%= f.number_field :show_id, :value => @currentlySelectedCategory , :class => "form-control" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :show_id, {:class => "control-label"} %>
+    <%= f.select :show_id, Show.all.collect {|x| [x.id.to_s + ". " + x.movie.name + ", " +x.auditorium.name + " auditorium. Starts on " + x.start_datetime.strftime("%b %d, %Y, at %I:%M%P")]}, {}, :class => "form-control"%>
   </div>
 
   <div class="field">

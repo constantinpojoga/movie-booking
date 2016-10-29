@@ -28,6 +28,7 @@
         <%= @show.start_datetime.strftime("%b %d, %Y from %I:%M%P to ") %>
         <%= @show.end_datetime.strftime(" %I:%M%P") %>
       </p>
+      <%= link_to 'Buy Ticket For This Show!', new_ticket_path(:show_id => @show.id), {:class => "btn btn-success"}  %>
       
     </div>
   </div>

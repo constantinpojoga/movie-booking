@@ -3,25 +3,25 @@
 
   <h1>Movies <%= link_to 'New Movie', new_movie_path, {:class => "btn btn-info"} %></h1>
 
-  
-  
   <hr />
   <div class="container"></div>
+    <div class="row">
       <% @movies.each do |movie| %>
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <img class="movies-img-preview" src="<%= movie.img %>">
-          </div>
-          <div class="col-sm-6 col-md-8">
-            <h3><%= link_to movie.name, movie %>
-            <p><%= movie.about %></p>
-            <p>Duration: <%= movie.length %> | <%= link_to 'Edit', edit_movie_path(movie) %> | <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></p>         
-          </div>
-        </div>
+        <div class="col-sm-6 col-md-4">
+          <%= link_to movie do%>
+            <img class="img-thumbnail img-responsive" src="<%= movie.img %>">
+          <% end %>
+        </div> 
+      <% end %>  
+    </div>
+      
+</div>
 
-      <% end %>
-
-
+<script>
 
   
-</div>
+</script>
+
+
+
+

@@ -17,11 +17,17 @@
 
     <p>
       <strong>Length:</strong>
-      <%= @movie.length %>min.
+      <%= @movie.length %>  min.
+
+      <%= link_to 'Edit', edit_movie_path(@movie), {:class => "btn btn-xs btn-default"}  %>
+
+      <%= link_to 'Destroy', @movie, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-default" %></p>  
     </p>
+    <hr />
+    <h3>All shows for this movie:</h3>
   </div>
   <hr />
-  <%= link_to 'Edit', edit_movie_path(@movie), {:class => "btn btn-info"}  %>
+ 
   <%= link_to 'Back', movies_path, {:class => "btn btn-info"}  %>
 
 </div>
