@@ -81,12 +81,12 @@ body {
   color: #FFF;
   border-radius: 5px;
   line-height: 25px;
-  cursor: pointer;
   text-align: center;
 }
 
 .single-seat-active {
   background: green;
+  cursor: pointer;
 }
 
 .single-seat-reserved {

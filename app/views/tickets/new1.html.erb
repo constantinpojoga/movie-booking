@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>New Ticket</h1>
+
+  <%= @currentlySelectedCategory =%>
+
+  <%= render 'form', ticket: @ticket %>
+  <hr />
+  <%= link_to 'Back', tickets_path, {:class => "btn btn-info"} %>
+
+</div>
+  

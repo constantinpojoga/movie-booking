@@ -1,6 +1,5 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
-
   # GET /tickets
   # GET /tickets.json
   def index
@@ -17,6 +16,11 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new
     @currentlySelectedCategory = params[:show_id] || 1
     @show = Show.find(@currentlySelectedCategory)
+    @ticketsForThisShow =  @show.tickets.all
+    @seats = Array.new(@show.auditorium.seat_rows.to_i, 0) { Array.new(@show.auditorium.seats_per_row.to_i, 0) } 
+    @ticketsForThisShow.each {|x| 
+      @seats[x.seat_row-1][x.seat_number-1] = 7 
+    } 
   end
 
 
