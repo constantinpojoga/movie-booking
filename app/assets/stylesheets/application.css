@@ -113,4 +113,41 @@ body {
   text-shadow: 3px 3px 8px #111;
 }
 
+.img-thumbnail{
+  max-height: 350px;
+}
+
+@media (max-width: 1199px) {
+  .img-thumbnail{
+  max-height: 285px;
+  }
+}
+
+@media (max-width: 991px) {
+  .img-thumbnail{
+  max-height: 295px;
+  }
+}
+
+@media (max-width: 991px) {
+  .img-thumbnail{
+  max-height: 295px;
+  }
+}
+
+@media (max-width: 478px) {
+  .img-thumbnail{
+  max-height: 220px;
+  }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+   .img-thumbnail{
+  max-height: 200px;
+  }
+}
+
+
+
+
 
