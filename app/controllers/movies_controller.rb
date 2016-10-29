@@ -10,6 +10,10 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.json
   def show
+    @shows = @movie.shows.all
+    p "-----------------------"
+    p @shows
+    p "------------------------"
   end
 
   # GET /movies/new

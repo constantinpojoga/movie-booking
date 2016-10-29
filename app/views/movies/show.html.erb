@@ -5,10 +5,10 @@
       <img class="img-responsive show-big-img" src="<%= @movie.img %>">
     </div>
 
-    <h4>
+    <h3>
       <strong>Name:</strong>
       <%= @movie.name %>
-    </h4>
+    </h3>
 
     <p>
       <strong>About:</strong>
@@ -22,9 +22,30 @@
       <%= link_to 'Edit', edit_movie_path(@movie), {:class => "btn btn-xs btn-default"}  %>
 
       <%= link_to 'Destroy', @movie, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-default" %></p>  
+      
     </p>
-    <hr />
+    <br />
     <h3>All shows for this movie:</h3>
+    <hr />
+
+    <% @shows.each do |show| %> 
+      <h3> 
+        <%= link_to show do %>
+          <strong>
+            <%= show.id %>.  
+            Auditorium
+            <span style="color:<%= show.auditorium.name.downcase%>;">
+              <%= show.auditorium.name%>
+            </span>
+          </strong> 
+          <small>
+            - on <%= show.start_datetime.strftime("%b %d, %Y, at %I:%M%P") %>
+          </small>  
+        <% end %>  
+        <%= link_to 'Buy Ticket ', new_ticket_path(:show_id => show.id), {:class => "btn btn-sm btn-success"}  %>
+      </h3>
+    <% end %> 
+
   </div>
   <hr />
  
