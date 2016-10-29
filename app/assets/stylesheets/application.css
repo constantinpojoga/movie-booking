@@ -115,6 +115,7 @@ body {
 
 .img-thumbnail{
   max-height: 350px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 1199px) {
@@ -126,24 +127,21 @@ body {
 @media (max-width: 991px) {
   .img-thumbnail{
   max-height: 295px;
-  }
-}
-
-@media (max-width: 991px) {
-  .img-thumbnail{
-  max-height: 295px;
+  margin-bottom: 10px;
   }
 }
 
 @media (max-width: 478px) {
   .img-thumbnail{
   max-height: 220px;
+  margin-bottom: 10px;
   }
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
    .img-thumbnail{
   max-height: 200px;
+  margin-bottom: 10px;
   }
 }
 
