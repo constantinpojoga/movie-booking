@@ -26,6 +26,10 @@
 
 * Buy ticket page
 
+* Send email then client buys a ticket
+
 * Styling and responsive with Bootstrap
+
+* Test and Debug
 
 
