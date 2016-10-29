@@ -127,14 +127,12 @@ body {
 @media (max-width: 991px) {
   .img-thumbnail{
   max-height: 295px;
-  margin-bottom: 10px;
   }
 }
 
 @media (max-width: 478px) {
   .img-thumbnail{
   max-height: 220px;
-  margin-bottom: 10px;
   }
 }
 
