@@ -28,23 +28,28 @@
     <h3>All shows for this movie:</h3>
     <hr />
 
-    <% @shows.each do |show| %> 
-      <h3> 
-        <%= link_to show do %>
-          <strong>
-            <%= show.id %>.  
-            Auditorium
-            <span style="color:<%= show.auditorium.name.downcase%>;">
-              <%= show.auditorium.name%>
-            </span>
-          </strong> 
-          <small>
-            - on <%= show.start_datetime.strftime("%b %d, %Y, at %I:%M%P") %>
-          </small>  
-        <% end %>  
-        <%= link_to 'Buy Ticket ', new_ticket_path(:show_id => show.id), {:class => "btn btn-sm btn-success"}  %>
-      </h3>
-    <% end %> 
+    <% if @shows.length > 0 %>
+      <% @shows.each do |show| %> 
+        <h3> 
+          <%= link_to show do %>
+            <strong>
+              <%= show.id %>.  
+              Auditorium
+              <span style="color:<%= show.auditorium.name.downcase%>;">
+                <%= show.auditorium.name%>
+              </span>
+            </strong> 
+            <small>
+              - on <%= show.start_datetime.strftime("%b %d, %Y, at %I:%M%P") %>
+            </small>  
+          <% end %>  
+          <%= link_to 'Buy Ticket ', new_ticket_path(:show_id => show.id), {:class => "btn btn-sm btn-success"}  %>
+        </h3>
+      <% end %> 
+    <% else %> 
+       <p>There are no shows for this movie. Please turn back later.</p>
+    <% end %>
+      
 
   </div>
   <hr />
