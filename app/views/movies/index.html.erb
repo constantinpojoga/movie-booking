@@ -1,8 +1,19 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
-
-  <h1>All Movies <%= link_to 'New Movie', new_movie_path, {:class => "btn btn-info"} %></h1>
-
+  <div class="row">
+    <div class="col-sm-5 col-md-4">
+      <h1 class="title-h1">All Movies <%= link_to 'New Movie', new_movie_path, {:class => "btn btn-info"} %></h1>
+    </div>
+    <div class="col-sm-7 col-md-8">
+       <%= form_tag movies_path, :method => 'get', class: 'input-group'  do %>
+        <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search for movie names...' %>
+        <span class="input-group-btn">
+          <%= submit_tag "search", class: "btn btn-default" %>
+        </span>
+      <% end %>
+    </div>
+  </div>
+    
   <hr />
   <div class="container"></div>
     <div class="row">
@@ -14,13 +25,8 @@
         </div> 
       <% end %>  
     </div>
-      
 </div>
 
-<script>
-
-  
-</script>
 
 
 
