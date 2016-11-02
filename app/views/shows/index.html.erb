@@ -1,14 +1,19 @@
 <div class="container">
   <div class="row">
-
-    <div class="col-xs-12">
-      <p class="color-red" id="notice"><%= notice %></p>
-       <h1>All Shows <%= link_to 'New Show', new_show_path, {:class => "btn btn-info"} %></h1> 
-       <hr />
-  
+    <div class="col-sm-5 col-md-4">
+      <h1 class="title-h1">All Shows <%= link_to 'New Show', new_show_path, {:class => "btn btn-info"} %></h1>
+    </div>
+    <div class="col-sm-7 col-md-8">
+       <%= form_tag shows_path, :method => 'get', class: 'input-group'  do %>
+        <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search for movie names, auditorium or id ...' %>
+        <span class="input-group-btn">
+          <%= submit_tag "search", class: "btn btn-default" %>
+        </span>
+      <% end %>
     </div>
   </div>
-  
+  <hr />
+
   <% @shows.each do |show| %>
     <div class="row show-result">
       <div class="col-xs-4 col-sm-2">
