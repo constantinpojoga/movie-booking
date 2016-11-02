@@ -5,7 +5,8 @@ class Show < ApplicationRecord
 
   def self.search(search)
     if search
-      where(["LOWER(movie.name) LIKE ?", "%#{search.downcase}%"])
+      all
+      # where(["LOWER(name) LIKE ?", "%#{search.downcase}%"])
     else
       all
     end

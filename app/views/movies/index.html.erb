@@ -6,7 +6,7 @@
     </div>
     <div class="col-sm-7 col-md-8">
        <%= form_tag movies_path, :method => 'get', class: 'input-group'  do %>
-        <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search for movie names...' %>
+        <%= text_field_tag :search, params[:search], class: 'form-control disabled', placeholder: 'Search for movie names...' %>
         <span class="input-group-btn">
           <%= submit_tag "search", class: "btn btn-default" %>
         </span>
