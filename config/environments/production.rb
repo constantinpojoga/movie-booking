@@ -64,8 +64,8 @@ Rails.application.configure do
    :domain               =>'movie-booking.herokuapp.com',
    :authentication       =>'plain',
    :enable_starttls_auto => true,
-   :user_name            => 'pojogac@gmail.com',
-   :password             => 'sysadmin'
+   :user_name            => ENV['GMAIL_USERNAME'],
+   :password             => ENV['GMAIL_PASSWORD']
   }
 
   config.action_mailer.default_url_options = { host: "movie-booking.herokuapp.com"}
