@@ -3,53 +3,55 @@
     <div class="col-sm-5 col-md-4">
       <h1 class="title-h1">All Shows <%= link_to 'New Show', new_show_path, {:class => "btn btn-info"} %></h1>
     </div>
-    <div class="col-sm-7 col-md-8">
+ <!--    <div class="col-sm-7 col-md-8">
        <%= form_tag shows_path, :method => 'get', class: 'input-group'  do %>
         <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search for movie names, auditorium or id ...' %>
         <span class="input-group-btn">
           <%= submit_tag "search", class: "btn btn-default" %>
         </span>
       <% end %>
-    </div>
+    </div> -->
   </div>
   <hr />
 
   <% @shows.each do |show| %>
-    <div class="row show-result">
-      <div class="col-xs-4 col-sm-2">
-        <%= link_to show do %>
-          <img class="shows-img" src="<%= show.movie.img %>"> 
-        <% end %>
+    <div class="col-md-6 show-result">
+      <div class="row">
+        <div class="col-xs-4 col-sm-2 col-md-3 show-result-img">
+          <%= link_to show do %>
+            <img class="shows-img" src="<%= show.movie.img %>"> 
+          <% end %>
+        </div>
+
+        <div class="col-xs-8 col-sm-10 col-md-9">
+          <%= link_to show do %>
+            <h4>
+              <strong><%= show.id %>. Movie:</strong>
+              <td><%= show.movie.name %></td>
+            </h4>
+          <% end %>
+
+          <p>
+            <strong>
+              Auditorium:
+              <td>
+                <span style="color:<%= show.auditorium.name.downcase %>;">
+                  <%= show.auditorium.name %>
+                </span>
+              </td>
+            </strong>
+          </p>
+
+          <p>
+            <strong>Show time:</strong>
+            <%= show.start_datetime.strftime("%b %d, %Y, from %I:%M%P to ") %>
+            <%= show.end_datetime.strftime(" %I:%M%P") %>.
+          </p>
+
+          <%= link_to 'Edit', edit_show_path(show), {:class => "btn btn-xs btn-default"} %>
+          <%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure to delete this show?'}, :class => "btn btn-xs btn-default" %>
+        </div>  
       </div>
-
-      <div class="col-xs-8 col-sm-10">
-        <%= link_to show do %>
-          <h4>
-            <strong><%= show.id %>. Movie:</strong>
-            <td><%= show.movie.name %></td>
-          </h4>
-        <% end %>
-
-        <p>
-          <strong>
-            Auditorium:
-            <td>
-              <span style="color:<%= show.auditorium.name.downcase %>;">
-                <%= show.auditorium.name %>
-              </span>
-            </td>
-          </strong>
-        </p>
-
-        <p>
-          <strong>Show time:</strong>
-          <%= show.start_datetime.strftime("%b %d, %Y, from %I:%M%P to ") %>
-          <%= show.end_datetime.strftime(" %I:%M%P") %>.
-        </p>
-
-        <%= link_to 'Edit', edit_show_path(show), {:class => "btn btn-xs btn-default"} %>
-        <%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure to delete this show?'}, :class => "btn btn-xs btn-default" %>
-      </div>  
     </div>
   <% end %> 
 </div>

@@ -27,7 +27,12 @@ body {
 
 .show-result {
   margin-bottom: 10px;
+  /*margin-left: 10px;*/
   border: 1px solid lightgrey;
+}
+
+.show-result-img {
+  margin-left: -15px;
 }
 
 .show-big-img {
