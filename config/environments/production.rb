@@ -56,6 +56,19 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "codechallenge_#{Rails.env}"
   config.action_mailer.perform_caching = false
+    config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.gmail.com",
+   :port                 => 587,
+   :domain               =>'movie-booking.herokuapp.com',
+   :authentication       =>'plain',
+   :enable_starttls_auto => true,
+   :user_name            => ENV['GMAIL_USERNAME'],
+   :password             => ENV['GMAIL_PASSWORD']
+  }
+
+  config.action_mailer.default_url_options = { host: "movie-booking.herokuapp.com"}
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

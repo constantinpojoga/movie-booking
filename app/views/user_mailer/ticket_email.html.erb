@@ -1,12 +1,6 @@
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-  <h1>You have successfully bought a ticket!</h1>
-  <h2>Ticket data:</h2>
+  <h2>You have successfully bought a ticket!</h2>
+  <hr />
    <h3>
         <strong>Movie: </strong> 
         <%= @ticket.show.movie.name %>
@@ -34,12 +28,11 @@
 
       <h4>
         <strong>Seat row:</strong> 
-        <%= @ticket.seat_row %>. 
+        <%= @ticket.seat_row %> | 
         <strong>Seat number:</strong> 
         <%= @ticket.seat_number %>.
       </h4>   
-      <br />
+      <hr />
       <h4>Thank you, enjoy your movie!</h4>
 
-  </body>
-</html>
+
