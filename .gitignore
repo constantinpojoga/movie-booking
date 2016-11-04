@@ -18,4 +18,4 @@
 .byebug_history
 
 #development ENV variables
- /config/local_env.yml
+ .env
