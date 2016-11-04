@@ -18,7 +18,7 @@
 .byebug_history
 
 #development ENV variables
- .env
+ /.env
 
 # Ignore application configuration
 /config/application.yml
