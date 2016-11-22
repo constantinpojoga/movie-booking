@@ -1,5 +1,8 @@
-## Movie Theater APP
-# To run local:
+# Movie Theater APP
+
+[*Movie Booking app*](http://movie-booking.herokuapp.com/)
+
+## To run local:
 
   1. Connect to the database (with pgAdmin)
 
