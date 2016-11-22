@@ -1,6 +1,6 @@
 # Movie Theater APP
 
-[*Movie Booking app*](http://movie-booking.herokuapp.com/)
+[*Movie Theater Link*](http://movie-booking.herokuapp.com/)
 
 ## To run local:
 
